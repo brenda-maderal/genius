@@ -47,7 +47,7 @@
 	--clr-light-yellow:   #fed93f;
 	--clr-light-blue:     #1c8cff;
 	
-	--clr-border:		  #333333;
+	--clr-border:		  #000000;
 	--clr-center:  		  #ECE7EE;
 
 	--clr-counter-bg:	  #32050C;
@@ -100,8 +100,8 @@ body {
 	font-size: 4rem;
 	text-transform: uppercase;
 	margin: 0;
-	padding-left: 3rem;
-	padding-top: 4rem;
+	padding-left: 1.2rem;
+	padding-top: 4.7rem;
 }
 
 .reg {
@@ -119,6 +119,7 @@ body {
 	width: calc(var(--game-size) / 2);
 	height: calc(var(--game-size) / 2);
 	border: #000;
+	border: var(--game-border);
 }
 
 .game__pad--tl {
@@ -175,7 +176,7 @@ body {
 	top: calc(var(--game-size) / 4);
 	left: calc(var(--game-size) / 4);
 
-	border: var(--clr-border);
+	border: var(--game-border);
 	border-radius: 25rem;
 }
 
@@ -194,13 +195,13 @@ body {
 	margin-right: 2.2rem;
 }
  
-.goup-Large {
+.group-large {
 	display: flex;
 	width: 10rem;
 	margin-left: 4.8rem;
 }
 
-.gui__Label {
+.gui__label {
 	font-family: "Arima Madurai", cursive;
 	font-weight: bold;
 	font-size: 0.75rem;
@@ -208,7 +209,7 @@ body {
 	text-transform: uppercase;
 }
 
-.gui__Label--switch {
+.gui__label--switch {
 	margin: 0;
 	padding: 0.75rem;
 }
@@ -280,7 +281,8 @@ body {
 	color: var(--clr-counter-on);
 }
 
-gui__Led {
+
+.gui__led {
 	background-color: #32050C;
 	margin-left: 1rem;
 	margin-bottom: .5rem;
@@ -290,7 +292,7 @@ gui__Led {
 	border-radius: 2rem;
 }
 
-.gui__Led---active {
+.gui__led--active {
 	background-color: red;
 }
 

@@ -34,6 +34,18 @@ _soundUrls.forEach(sndPath => {
 _gui.switch.addEventListener("click", () => {
 	_data.gameOn = _gui.switch.classList.toggle("gui__btn-switch--on");
 
+
+	if ($(".gui__btn-switch").hasClass("gui__btn-switch--on") == true) {
+		giroInicial(3, 100)
+		setTimeout(() => {
+			giroInicial(3, 100)
+			setTimeout(() => {
+				giroInicial(3, 100)
+			}, 500);
+		}, 500);
+		
+	}
+	
 	_gui.counter.classList.toggle("gui__counter--on");
 	_gui.counter.innerHTML = "--";
 
@@ -46,7 +58,11 @@ _gui.switch.addEventListener("click", () => {
 	disablePads();
 	changePadCursor("auto");
 
-	_gui.led.classList.remove("gui__led--active");
+	setTimeout(() => {
+		_gui.led.classList.remove("gui__led--active");
+	}, 3000);
+
+
 });
 
 _gui.strict.addEventListener("click", () => {
@@ -78,19 +94,19 @@ const padListener = (e) => {
 
 		e.target.classList.remove("game__pad--active");
 
-	const currentMove = _data.playerSequence.length - 1;
+		const currentMove = _data.playerSequence.length - 1;
 
-	if (_data.playerSequence[currentMove] !== _data.gameSequence[currentMove]) {
-		_data.playerCanPlay = false;
-		disablePads();
-		resetOrPlayAgain();
-	}
-	else if (currentMove === _data.gameSequence.length - 1) {
-		newColor();
-		playSequence();
-	}
+		if (_data.playerSequence[currentMove] !== _data.gameSequence[currentMove]) {
+			_data.playerCanPlay = false;
+			disablePads();
+			resetOrPlayAgain();
+		}
+		else if (currentMove === _data.gameSequence.length - 1) {
+			newColor();
+			playSequence();
+		}
 
-	waitForPlayerClick();
+		waitForPlayerClick();
 
 	}, 250);
 
@@ -235,4 +251,32 @@ const disablePads = () => {
 	_gui.pads.forEach(pad => {
 		pad.classList.remove("game__pad--active");
 	});
+}
+
+
+function giroInicial(voltas, tempo) {
+
+	// let i = 0;
+	// while (i < voltas) {
+	$(".game__pad--bl").addClass("game__pad--active")
+	setTimeout(() => {
+		$(".game__pad--bl").removeClass("game__pad--active")
+		$(".game__pad--tl").addClass("game__pad--active")
+		setTimeout(() => {
+			$(".game__pad--tl").removeClass("game__pad--active")
+			$(".game__pad--tr").addClass("game__pad--active")
+			setTimeout(() => {
+				$(".game__pad--tr").removeClass("game__pad--active")
+				$(".game__pad--br").addClass("game__pad--active")
+				setTimeout(() => {
+					$(".game__pad--br").removeClass("game__pad--active")
+					setTimeout(() => {
+						$(".game__pad--br").removeClass("game__pad--active")
+					}, tempo);
+				}, tempo);
+			}, tempo);
+		}, tempo);
+	}, tempo);
+	// i++;
+	//}
 }

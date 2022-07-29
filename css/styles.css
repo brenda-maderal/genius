@@ -37,24 +37,24 @@
 /**********************************/
 
 :root {
-	--clr-normal-green:   #00A74A;
-	--clr-normal-red:     #9F0F17;
-	--clr-normal-yellow:  #CCA707;
-	--clr-normal-blue:    #094A8F;
-	
-	--clr-light-green:    #13ff7c;
-	--clr-light-red:      #ff4c4c;
-	--clr-light-yellow:   #fed93f;
-	--clr-light-blue:     #1c8cff;
-	
-	--clr-border:		  #000000;
-	--clr-center:  		  #ECE7EE;
+	--clr-normal-green: #00A74A;
+	--clr-normal-red: #9F0F17;
+	--clr-normal-yellow: #CCA707;
+	--clr-normal-blue: #094A8F;
 
-	--clr-counter-bg:	  #32050C;
-	--clr-counter-off:	  #430710;
-	--clr-counter-on:	  #DC0D29;
-	
-	--clr-switch: 	      #3193DE;
+	--clr-light-green: #13ff7c;
+	--clr-light-red: #ff4c4c;
+	--clr-light-yellow: #fed93f;
+	--clr-light-blue: #1c8cff;
+
+	--clr-border: #000000;
+	--clr-center: #ECE7EE;
+
+	--clr-counter-bg: #32050C;
+	--clr-counter-off: #430710;
+	--clr-counter-on: #DC0D29;
+
+	--clr-switch: #3193DE;
 
 	--game-size: 48rem;
 	--game-border: 1.5rem solid var(--clr-border);
@@ -151,7 +151,7 @@ body {
 }
 
 .game__pad--bl.game__pad--active {
-	 background-color: var(--clr-light-yellow);
+	background-color: var(--clr-light-yellow);
 }
 
 .game__pad--br.game__pad--active {
@@ -194,7 +194,7 @@ body {
 .group {
 	margin-right: 2.2rem;
 }
- 
+
 .group-large {
 	display: flex;
 	width: 10rem;
@@ -304,4 +304,10 @@ footer {
 	text-align: center;
 	margin-top: 5rem;
 	font-size: 2rem;
+}
+
+@media (max-width: 600px){
+	html {
+		font-size: 45%;
+	}
 }
